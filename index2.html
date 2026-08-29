@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swaraksha — Voice Authentication Registry</title>
+<meta name="description" content="Swaraksha verifies whether a voice is genuinely human or an artificial clone, in real time.">
+<link rel="stylesheet" href="swaraksha.css">
+</head>
+<body>
+
+<!-- hidden SVG texture / filter defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.035 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+    <filter id="rough">
+      <feTurbulence type="turbulence" baseFrequency="0.045" numOctaves="2" result="warp"/>
+      <feDisplacementMap in="SourceGraphic" in2="warp" scale="5"/>
+    </filter>
+  </defs>
+</svg>
+
+<header class="letterhead" id="letterhead">
+  <div class="letterhead-inner">
+    <a href="#top" class="wordmark">
+      <svg viewBox="0 0 44 44" width="30" height="30" aria-hidden="true">
+        <path d="M22 4 L37 10 V21 C37 30 30.5 37 22 40 C13.5 37 7 30 7 21 V10 Z" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+        <path d="M14 22 Q18 14 22 22 T30 22" fill="none" stroke="var(--brass)" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <span>Swaraksha</span>
+    </a>
+    <nav class="letter-nav" id="letterNav">
+      <a href="#context">Why it matters</a>
+      <a href="#stages">How it works</a>
+      <a href="#registry">Capabilities</a>
+      <a href="#counter">Verification counter</a>
+      <a href="#enquiry">Enquire</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="kicker">Voice Authentication</p>
+      <h1>A voice can be borrowed.<br>Swaraksha tells you when it has been.</h1>
+      <p class="hero-tagline">"स्वरक्षा" — protection of one's own. Swaraksha listens to a call the way a trained ear would, and marks the moment a human voice has been replaced by a synthetic one.</p>
+      <a href="#counter" class="btn-ticket">Begin a verification</a>
+    </div>
+
+    <div class="seal-wrap" aria-hidden="true">
+      <svg viewBox="0 0 300 300" class="seal">
+        <defs>
+          <path id="sealArc" d="M 150,150 m -120,0 a 120,120 0 1,1 240,0 a 120,120 0 1,1 -240,0"/>
+        </defs>
+        <circle cx="150" cy="150" r="138" class="seal-ring-outer"/>
+        <circle cx="150" cy="150" r="120" class="seal-ring"/>
+        <circle cx="150" cy="150" r="72" class="seal-ring-inner"/>
+        <text class="seal-text">
+          <textPath href="#sealArc" startOffset="0%">SWARAKSHA · VOICE REGISTRY · TEAM DEVX · SWARAKSHA · VOICE REGISTRY · TEAM DEVX ·</textPath>
+        </text>
+        <path d="M150 96 L196 112 V150 C196 178 176 198 150 208 C124 198 104 178 104 150 V112 Z" fill="none" class="seal-shield" stroke-width="3"/>
+        <path d="M126 152 Q138 128 150 152 T174 152" fill="none" class="seal-wave" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="context">
+  <div class="section-inner narrow">
+    <p class="section-mark">I.</p>
+    <h2>The call sounds right. That is the problem.</h2>
+    <p class="prose">
+      A cloned voice no longer needs a studio or a script. <span class="num">Three seconds</span> of audio lifted from a voicemail or a reel is enough to rebuild someone's pitch, cadence and accent well enough to fool a relative, a bank teller, or a colleague on a rushed call. The fraud does not look like fraud — it sounds like your father, your manager, your daughter.
+    </p>
+    <p class="prose">
+      Text-based spoof filters and one-time passwords were built for a world where impersonation required effort. Voice cloning has removed the effort. What is left is a narrow window — usually under <span class="num">two seconds</span> — in which a listener, human or machine, has to decide whether the voice on the line is a person or a prediction. Swaraksha exists to make that decision reliably, inside that window.
+    </p>
+  </div>
+</section>
+
+
+<section class="section section-ink" id="stages">
+  <div class="section-inner">
+    <p class="section-mark on-ink">II.</p>
+    <h2 class="on-ink">Four stages, in the time it takes to say hello.</h2>
+    <ol class="ledger">
+      <li>
+        <span class="ledger-num">I</span>
+        <div class="ledger-body">
+          <h3>Capture</h3>
+          <p>The stream is read in short overlapping windows as it arrives — from a call, a conferencing feed, or a microphone — so nothing waits for the sentence to finish.</p>
+        </div>
+      </li>
+      <li>
+        <span class="ledger-num">II</span>
+        <div class="ledger-body">
+          <h3>Extract</h3>
+          <p>Pitch, timing and spectral texture are pulled from each window — the fine detail that today's cloning models still render slightly too cleanly.</p>
+        </div>
+      </li>
+      <li>
+        <span class="ledger-num">III</span>
+        <div class="ledger-body">
+          <h3>Compare</h3>
+          <p>The extracted features are weighed against known synthetic-speech signatures and, where available, the speaker's own enrolled voice-print.</p>
+        </div>
+      </li>
+      <li>
+        <span class="ledger-num">IV</span>
+        <div class="ledger-body">
+          <h3>Record verdict</h3>
+          <p>A confidence-scored result is entered and, if the voice is suspect, an alert is raised before the caller reaches their ask.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= REGISTRY OF CAPABILITIES ================= -->
+<section class="section" id="registry">
+  <div class="section-inner">
+    <p class="section-mark">III.</p>
+    <h2>What the registry checks for.</h2>
+    <div class="clauses">
+      <div class="clause">
+        <span class="clause-mark">a.</span>
+        <div><h3>Continuous listening</h3><p>Scores audio on a rolling basis, so a clone cannot pass one instant and coast through the next.</p></div>
+      </div>
+      <div class="clause">
+        <span class="clause-mark">b.</span>
+        <div><h3>Liveness</h3><p>Flags replayed recordings and the unnaturally even breathing patterns that generated speech tends to leave behind.</p></div>
+      </div>
+      <div class="clause">
+        <span class="clause-mark">c.</span>
+        <div><h3>Language coverage</h3><p>Holds its accuracy across major Indian languages and code-switched, accented speech — not just clean studio English.</p></div>
+      </div>
+      <div class="clause">
+        <span class="clause-mark">d.</span>
+        <div><h3>Edge inference</h3><p>Runs close to the call itself, so a verdict doesn't depend on a slow round trip to a distant server.</p></div>
+      </div>
+      <div class="clause">
+        <span class="clause-mark">e.</span>
+        <div><h3>Explainable findings</h3><p>Every flag names what triggered it — pitch jitter, phase artifacts, missing breath — not just a bare score.</p></div>
+      </div>
+      <div class="clause">
+        <span class="clause-mark">f.</span>
+        <div><h3>Simple integration</h3><p>One streaming endpoint, so a call centre or banking app can adopt it without rebuilding its telephony stack.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VERIFICATION COUNTER (interactive centerpiece) ================= -->
+<section class="section section-ink" id="counter">
+  <div class="section-inner">
+    <p class="section-mark on-ink">IV.</p>
+    <h2 class="on-ink">Verification counter</h2>
+    <p class="prose on-ink counter-lead">Present a sample and Swaraksha will render its true waveform, then enter a finding in the register below. Processed in your browser — nothing is uploaded.</p>
+
+    <div class="counter-grid">
+      <div class="counter-input">
+        <div class="input-tabs">
+          <button class="input-tab active" data-tab="upload" type="button">Submit a recording</button>
+          <button class="input-tab" data-tab="mic" type="button">Speak now</button>
+        </div>
+
+        <div class="input-pane active" data-pane="upload">
+          <label class="dropzone" id="uploadDrop" for="audioUpload">
+            <span id="uploadLabel">Choose a file, or drag it here — WAV, MP3, M4A</span>
+          </label>
+          <input type="file" id="audioUpload" accept="audio/*" hidden>
+          <canvas id="uploadWave" class="wave-canvas"></canvas>
+          <button class="btn-outline" id="analyzeUploadBtn" type="button" disabled>Enter into register</button>
+        </div>
+
+        <div class="input-pane" data-pane="mic">
+          <canvas id="micWave" class="wave-canvas wave-canvas-tall"></canvas>
+          <button class="btn-outline" id="micBtn" type="button">Record a 4-second sample</button>
+          <p class="mic-hint" id="micHint"></p>
+        </div>
+      </div>
+
+      <div class="certificate" id="certificate">
+        <div class="cert-head">
+          <span>SWARAKSHA REGISTER</span>
+          <span id="certId">Entry No. —</span>
+        </div>
+        <div class="cert-row"><span>Confidence</span><span id="certConfidence">—</span></div>
+        <div class="meter">
+          <div class="meter-fill" id="meterFill"></div>
+        </div>
+        <ul class="cert-findings" id="certFindings">
+          <li>Awaiting a sample.</li>
+        </ul>
+        <div class="stamp" id="certStamp">PENDING</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHAIN OF CUSTODY (flow, minimal) ================= -->
+<section class="section" id="flow">
+  <div class="section-inner">
+    <p class="section-mark">V.</p>
+    <h2>Where it sits in the call.</h2>
+    <div class="chain">
+      <div class="chain-node"><span class="chain-tag">source</span>Call, VoIP or mic stream</div>
+      <div class="chain-line"></div>
+      <div class="chain-node"><span class="chain-tag">feature layer</span>Pitch, timing, spectral read</div>
+      <div class="chain-line"></div>
+      <div class="chain-node chain-node-mark"><span class="chain-tag">model</span>Authentication engine</div>
+      <div class="chain-line"></div>
+      <div class="chain-node"><span class="chain-tag">outcome</span>Verdict + alert</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ENQUIRY ================= -->
+<section class="section" id="enquiry">
+  <div class="section-inner narrow">
+    <p class="section-mark">VI.</p>
+    <h2>File an enquiry.</h2>
+    <p class="prose">Leave a note and Team DevX will follow up with a working demonstration.</p>
+    <form class="enquiry-form" id="enquiryForm" novalidate>
+      <div class="form-row">
+        <label for="ef-name">Name</label>
+        <input type="text" id="ef-name" required>
+        <span class="form-error" data-for="ef-name"></span>
+      </div>
+      <div class="form-row">
+        <label for="ef-email">Email</label>
+        <input type="email" id="ef-email" required>
+        <span class="form-error" data-for="ef-email"></span>
+      </div>
+      <div class="form-row">
+        <label for="ef-msg">Note</label>
+        <textarea id="ef-msg" rows="3" required></textarea>
+        <span class="form-error" data-for="ef-msg"></span>
+      </div>
+      <button type="submit" class="btn-ticket">Submit enquiry</button>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="wordmark-sm">Swaraksha</span>
+    <span class="footer-note">Built by Team DevX. Verification results in the counter above are illustrative pending a live model connection.</span>
+  </div>
+</footer>
+
+<script src="swaraksha.js"></script>
+</body>
+</html>
