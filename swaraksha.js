@@ -3,9 +3,7 @@
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ============================================================
-     Mobile nav
-  ============================================================ */
+  
   const navToggle = document.getElementById('navToggle');
   const letterNav = document.getElementById('letterNav');
   navToggle.addEventListener('click', () => {
@@ -17,9 +15,7 @@
     navToggle.setAttribute('aria-expanded', 'false');
   }));
 
-  /* ============================================================
-     Input tabs (Submit a recording / Speak now)
-  ============================================================ */
+  
   const tabs = document.querySelectorAll('.input-tab');
   const panes = document.querySelectorAll('.input-pane');
   tabs.forEach(tab => {
@@ -31,9 +27,7 @@
     });
   });
 
-  /* ============================================================
-     Canvas helpers
-  ============================================================ */
+  
   function fitCanvas(canvas) {
     const ratio = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect();
@@ -65,10 +59,6 @@
   function getCSS(varName) {
     return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
   }
-
-  /* ============================================================
-     Certificate / stamp rendering
-  ============================================================ */
   const certId = document.getElementById('certId');
   const certConfidence = document.getElementById('certConfidence');
   const meterFill = document.getElementById('meterFill');
@@ -125,9 +115,7 @@
     });
   }
 
-  /* ============================================================
-     Upload pane — real waveform from decoded audio file
-  ============================================================ */
+
   const uploadInput = document.getElementById('audioUpload');
   const uploadDrop = document.getElementById('uploadDrop');
   const uploadLabel = document.getElementById('uploadLabel');
@@ -186,9 +174,7 @@
     runSimulatedVerdict().finally(() => { analyzeUploadBtn.disabled = false; });
   });
 
-  /* ============================================================
-     Mic pane — real 4-second live waveform via Web Audio API
-  ============================================================ */
+  
   const micBtn = document.getElementById('micBtn');
   const micWave = document.getElementById('micWave');
   const micHint = document.getElementById('micHint');
@@ -255,9 +241,6 @@
     drawLive();
   });
 
-  /* ============================================================
-     Enquiry form — client-side validation only
-  ============================================================ */
   const enquiryForm = document.getElementById('enquiryForm');
   const formStatus = document.getElementById('formStatus');
 

@@ -1,7 +1,4 @@
-/* ==========================================================================
-   Swaraksha — stylesheet
-   Registry / ledger / wax-seal aesthetic. Fonts degrade gracefully offline.
-   ========================================================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=Special+Elite&display=swap');
 
 :root{
@@ -41,7 +38,7 @@ body{
   line-height:1.6;
   position:relative;
 }
-/* paper grain, subtle, sitewide */
+
 body::before{
   content:'';
   position:fixed; inset:0; pointer-events:none; z-index:1;
@@ -58,7 +55,7 @@ button{ font-family:inherit; cursor:pointer; background:none; border:none; }
 input,textarea{ font-family:inherit; }
 :focus-visible{ outline:2px solid var(--brass); outline-offset:3px; }
 
-/* ---------- shared layout ---------- */
+
 .section{ padding:100px 24px; position:relative; z-index:2; }
 .section-inner{ max-width:var(--max-w); margin:0 auto; }
 .section-inner.narrow{ max-width:760px; }
@@ -76,7 +73,7 @@ input,textarea{ font-family:inherit; }
 .section-ink .prose .num{ color:#D8B65C; border-color:#D8B65C; }
 .counter-lead{ max-width:620px; }
 
-/* ---------- buttons ---------- */
+
 .btn-ticket{
   position:relative; display:inline-block; background:var(--brass); color:var(--paper);
   font-family:var(--font-stamp); font-size:.85rem; letter-spacing:.04em; text-transform:uppercase;
@@ -104,7 +101,7 @@ input,textarea{ font-family:inherit; }
 .btn-outline:disabled:hover{ background:none; color:inherit; }
 .section-ink .btn-outline:disabled:hover{ background:none; color:var(--paper); }
 
-/* ---------- letterhead ---------- */
+
 .letterhead{
   position:fixed; inset:0 0 auto 0; z-index:200; height:var(--nav-h);
   background:var(--paper); border-bottom:3px double var(--ink);
@@ -139,7 +136,7 @@ input,textarea{ font-family:inherit; }
   .nav-toggle{ display:flex; }
 }
 
-/* ---------- hero ---------- */
+
 .hero{ padding:calc(var(--nav-h) + 60px) 24px 80px; position:relative; z-index:2; }
 .hero-inner{
   max-width:var(--max-w); margin:0 auto; display:grid; grid-template-columns:1.1fr .9fr;
@@ -161,7 +158,7 @@ input,textarea{ font-family:inherit; }
 .seal-shield{ stroke:var(--ink); }
 .seal-wave{ stroke:var(--brass); }
 
-/* ---------- ledger (stages) ---------- */
+
 .ledger{ margin-top:44px; border-top:1px solid var(--ink-rule); }
 .ledger li{ display:flex; gap:24px; padding:26px 0; border-bottom:1px solid var(--ink-rule); }
 .ledger-num{ font-family:var(--font-display); font-size:1.8rem; font-weight:700; color:var(--brass); width:50px; flex-shrink:0; }
@@ -169,7 +166,7 @@ input,textarea{ font-family:inherit; }
 .ledger-body p{ margin:0; max-width:600px; color:#C9C2AE; }
 @media (max-width:600px){ .ledger li{ gap:14px; } .ledger-num{ width:34px; font-size:1.4rem; } }
 
-/* ---------- registry clauses ---------- */
+
 .clauses{ margin-top:44px; display:grid; grid-template-columns:1fr 1fr; gap:0 48px; }
 @media (max-width:760px){ .clauses{ grid-template-columns:1fr; } }
 .clause{ display:flex; gap:16px; padding:20px 0; border-bottom:1px solid var(--rule); }
@@ -177,7 +174,7 @@ input,textarea{ font-family:inherit; }
 .clause h3{ font-size:1.02rem; margin-bottom:4px; }
 .clause p{ margin:0; font-size:.92rem; color:var(--ink-soft); }
 
-/* ---------- verification counter ---------- */
+
 .counter-grid{ margin-top:44px; display:grid; grid-template-columns:1.1fr .9fr; gap:32px; align-items:start; }
 @media (max-width:900px){ .counter-grid{ grid-template-columns:1fr; } }
 
@@ -231,7 +228,7 @@ input,textarea{ font-family:inherit; }
 .stamp.flagged{ color:var(--maroon); border-color:var(--maroon); }
 @keyframes stampdown{ 0%{ transform:rotate(-9deg) scale(1.6); opacity:0; } 100%{ transform:rotate(-9deg) scale(1); opacity:1; } }
 
-/* ---------- chain of custody ---------- */
+
 .chain{ margin-top:44px; display:flex; align-items:center; flex-wrap:wrap; gap:0; }
 .chain-node{
   flex:1; min-width:150px; border:1px solid var(--ink); border-radius:3px; padding:16px 14px;
@@ -245,7 +242,7 @@ input,textarea{ font-family:inherit; }
   .chain-line{ width:1px; height:24px; align-self:center; background:repeating-linear-gradient(180deg,var(--ink-soft) 0 6px,transparent 6px 10px); }
 }
 
-/* ---------- enquiry form ---------- */
+
 .enquiry-form{ margin-top:28px; max-width:480px; }
 .form-row{ margin-bottom:18px; display:flex; flex-direction:column; gap:6px; }
 .form-row label{ font-family:var(--font-stamp); font-size:.75rem; letter-spacing:.03em; text-transform:uppercase; color:var(--ink-soft); }
@@ -258,7 +255,7 @@ input,textarea{ font-family:inherit; }
 .form-error{ font-size:.76rem; color:var(--maroon); min-height:1em; }
 .form-status{ font-size:.88rem; margin-top:10px; color:var(--forest); min-height:1.2em; }
 
-/* ---------- footer ---------- */
+
 .footer{ border-top:3px double var(--ink); padding:30px 24px; position:relative; z-index:2; }
 .footer-inner{ max-width:var(--max-w); margin:0 auto; display:flex; flex-wrap:wrap; gap:12px 24px; align-items:baseline; justify-content:space-between; }
 .footer-note{ font-size:.82rem; color:var(--ink-soft); max-width:480px; }
