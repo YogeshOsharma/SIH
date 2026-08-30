@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swaraksha — Voice Authentication</title>
+<meta name="description" content="Swaraksha checks, in real time, whether the voice on a call is genuinely human or a synthetic clone.">
+<link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <pattern id="jaali" width="46" height="46" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="46" height="46" fill="none"/>
+      <path d="M23 2 L44 23 L23 44 L2 23 Z" fill="none" stroke="#C9A227" stroke-width="0.6"/>
+      <circle cx="23" cy="23" r="4" fill="none" stroke="#C9A227" stroke-width="0.6"/>
+    </pattern>
+  </defs>
+</svg>
+
+
+<header class="letterhead">
+  <div class="letterhead-inner">
+    <a href="#top" class="wordmark">
+      <svg viewBox="0 0 40 40" width="26" height="26" aria-hidden="true">
+        <circle cx="20" cy="20" r="17" fill="none" stroke="var(--gold)" stroke-width="1"/>
+        <path d="M14 24 Q17 14 20 24 T26 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      Swaraksha
+    </a>
+    <nav class="letter-nav" id="letterNav">
+      <a href="#context">The Threat</a>
+      <a href="#stages">Method</a>
+      <a href="#features">Capabilities</a>
+      <a href="#demo">Verification</a>
+      <a href="#contact">Enquire</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Voice Authentication</p>
+    <h1>A voice can be borrowed.<br>Swaraksha tells you when <span class="gilt">it has been.</span></h1>
+    <p class="hero-sub">Swaraksha listens beside a call and tells, in the time it takes to say hello, whether the voice belongs to a person — or to a model trained to sound like one.</p>
+    <a href="#demo" class="btn-gold">Begin a Verification</a>
+
+    <div class="crest" aria-hidden="true">
+      <svg viewBox="0 0 260 260" class="crest-svg">
+        <circle cx="130" cy="130" r="122" class="crest-ring-outer"/>
+        <circle cx="130" cy="130" r="100" class="crest-ring"/>
+        <g class="crest-beads"></g>
+        <path d="M130 74
+                 C118 92 96 100 96 124 C96 148 112 164 130 176
+                 C148 164 164 148 164 124 C164 100 142 92 130 74 Z"
+              fill="none" class="crest-lotus"/>
+        <path d="M112 132 Q121 108 130 132 T148 132" fill="none" class="crest-wave"/>
+      </svg>
+    </div>
+  </div>
+  <div class="hero-fade" aria-hidden="true"></div>
+</section>
+
+<div class="divider"><span class="divider-mark">❖</span></div>
+
+
+<section class="section" id="context">
+  <div class="section-inner narrow">
+    <p class="eyebrow">The Threat</p>
+    <h2>The call sounds right. That is exactly the problem.</h2>
+    <blockquote class="pull-quote">
+      <span class="quote-mark">“</span>
+      Three seconds of audio — a voicemail, a reel, a call put on hold — is now enough to rebuild a voice convincingly.
+    </blockquote>
+    <p class="prose">
+      What is stolen isn't a password. It's the sound of a father, a manager, a daughter — and the instinctive trust that comes with recognising it. Text-based defences were built for a world where impersonation took effort. Cloning has removed the effort, leaving only a narrow window, usually under two seconds, in which someone has to decide: person, or prediction. Swaraksha exists to make that decision inside that window, reliably.
+    </p>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-mark">❖</span></div>
+
+<!-- ================= STAGES ================= -->
+<section class="section" id="stages">
+  <div class="section-inner">
+    <p class="eyebrow">The Method</p>
+    <h2>Four movements, before the sentence ends.</h2>
+
+    <div class="garland">
+      <div class="garland-step">
+        <span class="garland-badge">I</span>
+        <h3>Capture</h3>
+        <p>Audio is read in short, overlapping windows as it arrives, from a call or a microphone.</p>
+      </div>
+      <div class="garland-step">
+        <span class="garland-badge">II</span>
+        <h3>Extract</h3>
+        <p>Pitch, timing and the fine grain of the voice are drawn out of each window.</p>
+      </div>
+      <div class="garland-step">
+        <span class="garland-badge">III</span>
+        <h3>Compare</h3>
+        <p>The result is weighed against known synthetic signatures and, if enrolled, the speaker's own voice-print.</p>
+      </div>
+      <div class="garland-step">
+        <span class="garland-badge">IV</span>
+        <h3>Verdict</h3>
+        <p>A confidence-scored finding is returned, and an alert raised the moment a clone is suspected.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-mark">❖</span></div>
+
+
+<section class="section" id="features">
+  <div class="section-inner">
+    <p class="eyebrow">Capabilities</p>
+    <h2>What sits inside the console.</h2>
+
+    <div class="feature-grid">
+      <article class="feature-card">
+        <span class="corner corner-tl"></span><span class="corner corner-br"></span>
+        <svg class="feature-icon" viewBox="0 0 40 40"><path d="M6 20c4-10 8-10 12 0s8 10 12 0s4-10 4-10" fill="none" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <h3>Continuous listening</h3>
+        <p>Scores audio on a rolling basis, so a clone cannot pass one instant and coast through the next.</p>
+      </article>
+      <article class="feature-card">
+        <span class="corner corner-tl"></span><span class="corner corner-br"></span>
+        <svg class="feature-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="13" fill="none" stroke-width="1.6"/><path d="M20 7a13 13 0 010 26" fill="none" stroke-width="1.6"/></svg>
+        <h3>Liveness</h3>
+        <p>Flags replayed recordings and the unnaturally even breathing that generated speech tends to leave behind.</p>
+      </article>
+      <article class="feature-card">
+        <span class="corner corner-tl"></span><span class="corner corner-br"></span>
+        <svg class="feature-icon" viewBox="0 0 40 40"><path d="M8 14h24M8 20h24M8 26h16" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <h3>Indian languages, natively</h3>
+        <p>Trained across Hindi, Tamil, Bengali, Marathi and more — including accented and code-switched speech.</p>
+      </article>
+      <article class="feature-card">
+        <span class="corner corner-tl"></span><span class="corner corner-br"></span>
+        <svg class="feature-icon" viewBox="0 0 40 40"><path d="M20 5l4 9 10 1-7.5 7 2 10-8.5-5-8.5 5 2-10-7.5-7 10-1z" fill="none" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <h3>Runs at the edge</h3>
+        <p>A distilled model runs close to the call itself, so a verdict never waits on a distant server.</p>
+      </article>
+      <article class="feature-card">
+        <span class="corner corner-tl"></span><span class="corner corner-br"></span>
+        <svg class="feature-icon" viewBox="0 0 40 40"><path d="M20 6v11M20 33v-6M10 20h6M24 20h6" stroke-width="1.6" stroke-linecap="round"/><circle cx="20" cy="20" r="5" fill="none" stroke-width="1.6"/></svg>
+        <h3>Explainable findings</h3>
+        <p>Every flag names what triggered it — pitch jitter, phase artifacts, missing breath — not just a score.</p>
+      </article>
+      <article class="feature-card">
+        <span class="corner corner-tl"></span><span class="corner corner-br"></span>
+        <svg class="feature-icon" viewBox="0 0 40 40"><rect x="7" y="11" width="26" height="18" rx="1.5" fill="none" stroke-width="1.6"/><path d="M7 17h26" stroke-width="1.6"/></svg>
+        <h3>One endpoint to adopt</h3>
+        <p>A single streaming API, so a call centre or banking app can adopt it without rebuilding telephony.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-mark">❖</span></div>
+
+
+<section class="section section-deep" id="demo">
+  <div class="section-inner">
+    <p class="eyebrow">Verification</p>
+    <h2>Present a sample. Receive a seal.</h2>
+    <p class="prose">Upload a short clip or speak for four seconds. Swaraksha renders the true waveform of what it hears, then places a seal — processed in your browser, nothing leaves this page.</p>
+
+    <div class="demo-grid">
+      <div class="demo-panel">
+        <div class="input-tabs">
+          <button class="input-tab active" data-tab="upload" type="button">Submit a recording</button>
+          <button class="input-tab" data-tab="mic" type="button">Speak now</button>
+        </div>
+
+        <div class="input-pane active" data-pane="upload">
+          <label class="dropzone" id="uploadDrop" for="audioUpload">
+            <span id="uploadLabel">Choose a file, or drag it here — WAV, MP3, M4A</span>
+          </label>
+          <input type="file" id="audioUpload" accept="audio/*" hidden>
+          <canvas id="uploadWave" class="wave-canvas"></canvas>
+          <button class="btn-gold-outline" id="analyzeUploadBtn" type="button" disabled>Analyze &amp; Seal</button>
+        </div>
+
+        <div class="input-pane" data-pane="mic">
+          <canvas id="micWave" class="wave-canvas wave-canvas-tall"></canvas>
+          <button class="btn-gold-outline" id="micBtn" type="button">Record 4 Seconds</button>
+          <p class="mic-hint" id="micHint"></p>
+        </div>
+      </div>
+
+      <div class="seal-card">
+        <p class="seal-card-label">Finding</p>
+        <div class="arc-wrap">
+          <svg viewBox="0 0 200 110" class="arc">
+            <path d="M14 100 A 86 86 0 0 1 186 100" class="arc-track"/>
+            <path d="M14 100 A 86 86 0 0 1 186 100" class="arc-fill" id="arcFill"/>
+          </svg>
+          <div class="arc-center">
+            <span class="arc-num" id="arcNum">—</span>
+            <span class="arc-pct">confidence</span>
+          </div>
+        </div>
+        <div class="royal-seal" id="royalSeal">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="46" class="rs-outer"/>
+            <circle cx="50" cy="50" r="38" class="rs-inner"/>
+          </svg>
+          <span class="rs-text" id="rsText">—</span>
+        </div>
+        <ul class="findings" id="findingsList"><li>Awaiting a sample</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-mark">❖</span></div>
+
+<section class="section" id="flow">
+  <div class="section-inner">
+    <p class="eyebrow">In the Call</p>
+    <h2>Where Swaraksha sits.</h2>
+    <div class="chain">
+      <div class="chain-node">Call, VoIP or mic</div>
+      <div class="chain-diamond">◆</div>
+      <div class="chain-node">Feature extraction</div>
+      <div class="chain-diamond">◆</div>
+      <div class="chain-node chain-node-gold">Authentication engine</div>
+      <div class="chain-diamond">◆</div>
+      <div class="chain-node">Verdict &amp; alert</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-mark">❖</span></div>
+
+
+<section class="section" id="contact">
+  <div class="section-inner narrow">
+    <p class="eyebrow">Enquire</p>
+    <h2>Want to see it in action?</h2>
+    <p class="prose">Leave your details and someone from the team will walk you through it in person.</p>
+    <form class="enquiry-form" id="enquiryForm" novalidate>
+      <div class="form-row">
+        <label for="ef-name">Name</label>
+        <input type="text" id="ef-name" required>
+        <span class="form-error" data-for="ef-name"></span>
+      </div>
+      <div class="form-row">
+        <label for="ef-email">Email</label>
+        <input type="email" id="ef-email" required>
+        <span class="form-error" data-for="ef-email"></span>
+      </div>
+      <div class="form-row">
+        <label for="ef-msg">Note</label>
+        <textarea id="ef-msg" rows="3" required></textarea>
+        <span class="form-error" data-for="ef-msg"></span>
+      </div>
+      <button type="submit" class="btn-gold">Submit</button>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="wordmark-sm">Swaraksha</span>
+    <span class="footer-note">Built by Team DevX. Findings shown in the verification counter are illustrative pending a live model connection.</span>
+  </div>
+</footer>
+
+<script src="swaraksha-royal.js"></script>
+</body>
+</html>
